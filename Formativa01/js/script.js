@@ -122,7 +122,7 @@ const exercicio7 = () => {
     resultado += contador + " # ";
     contador--;
   }
-  
+
   resposta.innerHTML = "<h2>Resposta da Atividade</h2><p>" + resultado + "</p>";
 };
 // Atividade 8
@@ -130,11 +130,10 @@ const exercicio8 = () => {
   let resultado = document.getElementById("resultado");
   let erro = document.getElementById("erro");
   let palavra = document.getElementById("palavra").value;
-  
+
   resultado.innerHTML = "";
   erro.innerHTML = "";
 
-  
   let palavraInvertida = "";
 
   for (let i = palavra.length - 1; i >= 0; i--) {
@@ -204,28 +203,28 @@ const exercicio12 = () => {
 };
 // Atividade 13
 const exercicio13 = () => {
-    let resultado = document.getElementById('resultado');
-    let erro = document.getElementById('erro');
-    let numero = document.getElementById('num1','num2').value;
-    let primo = true;
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let numero = document.getElementById("num1", "num2").value;
+  let primo = true;
 
-    if(numero <= 0){
-        erro.innerHTML = 'Digite um número maior do que 0!'
-        resultado.innerHTML = '';
-        return;
-    } else {
-        for(let i = 2; i <numero; i++){
-            if(numero % i == 0){
-                primo = false;
-                i++;
-            }
-        }
+  if (numero <= 0) {
+    erro.innerHTML = "Digite um número maior do que 0!";
+    resultado.innerHTML = "";
+    return;
+  } else {
+    for (let i = 2; i < numero; i++) {
+      if (numero % i == 0) {
+        primo = false;
+        i++;
+      }
     }
-    if (primo){
-        resultado.innerHTML = `Existem ${i} números primos até o ${num1,num2}`
-        erro.innerHTML = '';
-}
-}
+  }
+  if (primo) {
+    resultado.innerHTML = `Existem ${i} números primos até o ${(num1, num2)}`;
+    erro.innerHTML = "";
+  }
+};
 // Atividade 14
 const exercicio14 = () => {
   let result = document.getElementById("resultado");
@@ -234,35 +233,35 @@ const exercicio14 = () => {
   let numero2 = document.getElementById("num2").value;
   if (numero1 <= 0 || numero2 <= 0) {
     erro.innerHTML = "Digite dois números válidos";
-    result.innerHTML = '';
+    result.innerHTML = "";
   } else {
     let calculo = parseInt(numero1) * parseInt(numero2);
     resultado.innerHTML = `A área do retângulo é de: ${calculo} un²`;
   }
-}
+};
 // Atividade 15
 const exercicio15 = () => {
-    let resultado = document.getElementById("resultado");
-    let erro = document.getElementById("erro");
-    let palavra = document.getElementById("palavra").value;
-    let vogais = ['a', 'e', 'i', 'o', 'u'];
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let palavra = document.getElementById("palavra").value;
+  let vogais = ["a", "e", "i", "o", "u"];
 
-    if (palavra.length < 1) {
-        erro.innerHTML = 'Digite no mínimo uma letra';
-        resultado.innerHTML = '';
-    } else {
-        palavra = palavra.toLowerCase();
-        resultado.innerHTML = ''; 
-        
-        for (let i = 0; i < palavra.length; i++) {
-            if (vogais.includes(palavra[i])) {
-                resultado.innerHTML += `A letra <b>${palavra[i]}</b> é uma vogal<br>`;
-            } else {
-                resultado.innerHTML += `A letra <b>${palavra[i]}</b> não é uma vogal<br>`;
-            }
-        }
-        erro.innerHTML = '';
+  if (palavra.length < 1) {
+    erro.innerHTML = "Digite no mínimo uma letra";
+    resultado.innerHTML = "";
+  } else {
+    palavra = palavra.toLowerCase();
+    resultado.innerHTML = "";
+
+    for (let i = 0; i < palavra.length; i++) {
+      if (vogais.includes(palavra[i])) {
+        resultado.innerHTML += `A letra <b>${palavra[i]}</b> é uma vogal<br>`;
+      } else {
+        resultado.innerHTML += `A letra <b>${palavra[i]}</b> não é uma vogal<br>`;
+      }
     }
+    erro.innerHTML = "";
+  }
 };
 // Atividade 16
 const exercicio16 = () => {
@@ -316,117 +315,117 @@ const exercicio18 = () => {
 };
 // Atividade 19
 const exercicio19 = () => {
-    let resultado = document.getElementById("resultado");
-    let erro = document.getElementById("erro");
-    let letra = document.getElementById("letra").value;
-    let palavra = document.getElementById("palavra").value;
-    let vogais = ['a', 'e', 'i', 'o', 'u'];
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let letra = document.getElementById("letra").value;
+  let palavra = document.getElementById("palavra").value;
+  let vogais = ["a", "e", "i", "o", "u"];
 
-
-    if (letra.length > 1) {
-        erro.innerHTML = 'Digite apenas uma letra';
-        resultado.innerHTML = '';
-    } else {
-        palavra = palavra.toLowerCase();
-        let palavraVetor = palavra.split('');
-        for (let i = 0; i < palavraVetor.length; i++) {
-            if (vogais.includes(palavraVetor[i])) {
-                palavraVetor[i] = letra; 
-            }
-        }
-        palavra = palavraVetor.join('');
-        resultado.innerHTML = `A palavra resultante é: ${palavra}`;
-        erro.innerHTML = '';
+  if (letra.length > 1) {
+    erro.innerHTML = "Digite apenas uma letra";
+    resultado.innerHTML = "";
+  } else {
+    palavra = palavra.toLowerCase();
+    let palavraVetor = palavra.split("");
+    for (let i = 0; i < palavraVetor.length; i++) {
+      if (vogais.includes(palavraVetor[i])) {
+        palavraVetor[i] = letra;
+      }
     }
-}
+    palavra = palavraVetor.join("");
+    resultado.innerHTML = `A palavra resultante é: ${palavra}`;
+    erro.innerHTML = "";
+  }
+};
 // Atividade 20
 const exercicio20 = () => {
-    let resultado = document.getElementById("resultado");
-    let erro = document.getElementById("erro");
-    let frase = document.getElementById("frase").value;
-    let fraseInvertida = '';
-    if(frase.length <= 0){
-      erro.innerHTML = 'Digite uma frase';
-      resultado.innerHTML = '';
-    } else{
-      for(let i = frase.length - 1; i >= 0; i--){
-        fraseInvertida += frase[i];
-      }
-      resultado.innerHTML = `A frase invertida é: ${fraseInvertida}`;
-      erro.innerHTML = '';
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let frase = document.getElementById("frase").value;
+  let fraseInvertida = "";
+  if (frase.length <= 0) {
+    erro.innerHTML = "Digite uma frase";
+    resultado.innerHTML = "";
+  } else {
+    for (let i = frase.length - 1; i >= 0; i--) {
+      fraseInvertida += frase[i];
     }
+    resultado.innerHTML = `A frase invertida é: ${fraseInvertida}`;
+    erro.innerHTML = "";
   }
+};
 // Atividade 21
 const exercicio21 = () => {
-    let resultado = document.getElementById("resultado");
-    let erro = document.getElementById("erro");
-    let frase = document.getElementById("frase").value;
-    let fraseSemEspaco = '';
-    if(frase.length <= 0){
-      erro.innerHTML = 'Digite uma frase';
-      resultado.innerHTML = '';
-    } else{
-      for(let i = 0; i < frase.length; i++){
-        if(frase[i] != ' '){
-          fraseSemEspaco += frase[i];
-        }
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let frase = document.getElementById("frase").value;
+  let fraseSemEspaco = "";
+  if (frase.length <= 0) {
+    erro.innerHTML = "Digite uma frase";
+    resultado.innerHTML = "";
+  } else {
+    for (let i = 0; i < frase.length; i++) {
+      if (frase[i] != " ") {
+        fraseSemEspaco += frase[i];
       }
-      resultado.innerHTML = `A frase sem espaços é: ${fraseSemEspaco}`;
-      erro.innerHTML = '';
     }
-  };
+    resultado.innerHTML = `A frase sem espaços é: ${fraseSemEspaco}`;
+    erro.innerHTML = "";
+  }
+};
 // Atividade 22
 const exercicio22 = () => {
-    let resultado = document.getElementById("resultado");
-    let erro = document.getElementById("erro");
-    let numero;
-    let soma = 0;
-    while (soma < 100) {
-      numero = parseInt(prompt("Digite um número"));
-      soma += numero;
-    }
-    resultado.innerHTML = soma;
-    erro.innerHTML = "";
-  };
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let numero;
+  let soma = 0;
+  while (soma < 100) {
+    numero = parseInt(prompt("Digite um número"));
+    soma += numero;
+  }
+  resultado.innerHTML = soma;
+  erro.innerHTML = "";
+};
 // Atividade 23
 const exercicio23 = () => {
-    let resultado = document.getElementById("resultado");
-    let erro = document.getElementById("erro");
-    let frase = document.getElementById("frase").value;
-    let palavra = document.getElementById("palavra").value;
-    let contador = 0;
-    if(frase.length <= 0 || palavra.length <= 0){
-      erro.innerHTML = 'Digite uma frase e uma palavra';
-      resultado.innerHTML = '';
-    } else{
-      let fraseVetor = frase.split(' ');
-      for(let i = 0; i < fraseVetor.length; i++){
-        if(fraseVetor[i] == palavra){
-          contador++;
-        }
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let frase = document.getElementById("frase").value;
+  let palavra = document.getElementById("palavra").value;
+  let contador = 0;
+  if (frase.length <= 0 || palavra.length <= 0) {
+    erro.innerHTML = "Digite uma frase e uma palavra";
+    resultado.innerHTML = "";
+  } else {
+    let fraseVetor = frase.split(" ");
+    for (let i = 0; i < fraseVetor.length; i++) {
+      if (fraseVetor[i] == palavra) {
+        contador++;
       }
-      resultado.innerHTML = `A palavra ${palavra} aparece ${contador} vezes na frase`;
-      erro.innerHTML = '';
     }
-  };
+    resultado.innerHTML = `A palavra ${palavra} aparece ${contador} vezes na frase`;
+    erro.innerHTML = "";
+  }
+};
 // Atividade 24
 const exercicio24 = () => {
-    let resultado = document.getElementById("resultado");
-    let erro = document.getElementById("erro");
-    let frase = document.getElementById("frase").value;
-    let fraseTitleCase = '';
-    if(frase.length <= 0){
-      erro.innerHTML = 'Digite uma frase';
-      resultado.innerHTML = '';
-    } else{
-      let fraseVetor = frase.split(' ');
-      for(let i = 0; i < fraseVetor.length; i++){
-        fraseTitleCase += fraseVetor[i].charAt(0).toUpperCase() + fraseVetor[i].slice(1) + ' ';
-      }
-      resultado.innerHTML = `A frase em Title Case é: ${fraseTitleCase}`;
-      erro.innerHTML = '';
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let frase = document.getElementById("frase").value;
+  let fraseTitleCase = "";
+  if (frase.length <= 0) {
+    erro.innerHTML = "Digite uma frase";
+    resultado.innerHTML = "";
+  } else {
+    let fraseVetor = frase.split(" ");
+    for (let i = 0; i < fraseVetor.length; i++) {
+      fraseTitleCase +=
+        fraseVetor[i].charAt(0).toUpperCase() + fraseVetor[i].slice(1) + " ";
     }
+    resultado.innerHTML = `A frase em Title Case é: ${fraseTitleCase}`;
+    erro.innerHTML = "";
   }
+};
 // Atividade 25
 const exercicio25 = () => {
   let resposta = document.getElementById("resposta");
